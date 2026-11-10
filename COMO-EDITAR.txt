@@ -1,0 +1,48 @@
+PÁGINA WEB CORPORACIÓN GLAESEL · SAFETY FIRST — CÓMO EDITARLA
+================================================================
+
+Archivos:
+  index.html   → la página (diseño y animaciones). Normalmente no hay que tocarlo.
+  catalogo.js  → AQUÍ se edita todo: servicios, cursos, preguntas del diagnóstico,
+                 productos, precios, contactos, aliados, clientes y los videos.
+  tienda.js / tienda.css → el carrito y el pago. No hace falta tocarlos.
+  fotos/       → fotos reales (salieron de la presentación de la empresa).
+  logos/       → logo de CGSA, de Safety First, de las empresas aliadas y de los clientes.
+  media/       → aquí van los videos o imágenes que generes con Higgsfield.
+
+1) DATOS DE LA EMPRESA
+   Abre catalogo.js con el Bloc de notas. Todo lo que dice CONFIRMAR hay que revisarlo:
+   - WhatsApp (502 + número, sin espacios). Ahora está el de Alex: 5830 2002.
+   - Dirección de la oficina, horario, cobertura de entregas y cuenta del banco.
+
+2) VIDEOS DE HIGGSFIELD
+   Copia el video a la carpeta media/ y escribe su nombre en el bloque MEDIA de catalogo.js:
+     heroVideo:      "media/hero.mp4"         ← video horizontal del inicio (16:9)
+     heroVideoMovil: "media/hero-movil.mp4"   ← versión vertical para celular (9:16)
+     ctaVideo:       "media/cta.mp4"          ← fondo de la franja "¿Una emergencia...?"
+   Si lo dejas vacío ("") se usa la foto real. Que cada video pese menos de 4 MB.
+   Para cambiar la foto de una tarjeta de servicio, cambia foto: "fotos/..." en SERVICIOS.
+
+3) PRODUCTOS Y PRECIOS
+   Los precios que vienen son DE PRUEBA. Copia un bloque { ... }, pégalo y cambia los
+   datos. Para usar foto: copia la foto a "fotos" y pon foto: "fotos/mi-foto.jpg".
+   Si dejas foto: null sale un dibujo del producto (icono: "extintor", "botiquin", etc.).
+
+4) CURSOS Y DIAGNÓSTICO
+   En CURSOS se agregan o quitan cursos (area: "sso" o "emergencias"; destacado: true
+   les pone la etiqueta "Popular"). En DIAGNOSTICO están las 8 preguntas: cada "No"
+   recomienda el servicio que dice rec. Todo termina en un mensaje de WhatsApp.
+
+5) EL PAGO ES DE DEMOSTRACIÓN
+   El pago con tarjeta NO cobra nada: sirve para mostrar cómo funcionaría. Los datos de la
+   tarjeta nunca salen de la página. Para cobrar de verdad hay que conectar una pasarela de
+   pago (Recurrente, NeoNet, Visanet, PayPal...) en la función procesarPago() de tienda.js.
+   Tarjeta de prueba: 4242 4242 4242 4242 (aprobada) · 4000 0000 0000 0002 (rechazada).
+
+6) ANTES DE PUBLICAR
+   - Pedir permiso a la empresa para usar su nombre, logo, fotos y los logos de clientes.
+   - Las fotos salieron del PDF en baja resolución: pedir los archivos originales.
+   - Borrar la carpeta oculta .claude/ si existe.
+
+7) PUBLICARLA GRATIS
+   Entra a https://app.netlify.com/drop y arrastra la carpeta completa.
