@@ -12,7 +12,7 @@ Archivos:
 
 1) DATOS DE LA EMPRESA
    Abre catalogo.js con el Bloc de notas. Todo lo que dice CONFIRMAR hay que revisarlo:
-   - WhatsApp (502 + número, sin espacios). Ahora está el de Alex: 5830 2002.
+   - WhatsApp (502 + número, sin espacios). Ahora está el 3993 1999.
    - Dirección de la oficina, horario, cobertura de entregas y cuenta del banco.
 
 2) VIDEOS DE HIGGSFIELD

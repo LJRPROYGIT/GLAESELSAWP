@@ -22,7 +22,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Corporación Glaesel, S.A.","alternateName":"Safety First","foundingDate":"2009",
  "description":"Salud y seguridad ocupacional: asesoría, capacitación, atención prehospitalaria, respuesta a emergencias, extintores y equipo.",
- "telephone":"+502 5830 2002","email":"alex.glaesel@glaeselsa.com",
+ "telephone":"+502 3993 1999","email":"alex.glaesel@glaeselsa.com",
  "address":{"@type":"PostalAddress","addressLocality":"Ciudad de Guatemala","addressCountry":"GT"},
  "areaServed":"Guatemala"}
 </script>
@@ -123,6 +123,9 @@ header.is-scrolled .brand img{width:42px}
 .stat b{display:block;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(2.2rem,4vw,3.3rem);line-height:1;font-variant-numeric:tabular-nums}
 .stat b i{font-style:normal;color:var(--red)}
 .stat > span{display:block;font-size:.88rem;color:#B8BDC2;margin-top:6px}
+.hero-svc{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;max-width:680px;animation:t-fade 900ms ease 860ms backwards}
+.hero-svc a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:background-color .25s ease}
+.hero-svc a::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--red)}
 /* El arco del logo que se dibuja una vez, alrededor del hero */
 .arc{position:absolute;right:-12vw;top:50%;width:min(70vw,880px);aspect-ratio:1;transform:translateY(-50%);z-index:-1;pointer-events:none}
 .arc circle{fill:none;stroke:rgba(255,255,255,.16);stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s var(--ease-in-out) .4s forwards}
@@ -153,6 +156,12 @@ header.is-scrolled .brand img{width:42px}
 .svc.in .card{animation:cardIn 900ms var(--ease-in-out) backwards;animation-delay:var(--rd,0ms)}
 @keyframes cardIn{from{clip-path:inset(100% 0 0 0 round 14px)}to{clip-path:inset(0 0 0 0 round 14px)}}
 .t-js .svc:not(.in) .card{clip-path:inset(100% 0 0 0)}
+.card{scroll-margin-top:110px}
+#servicios .head{max-width:820px}
+.svc-more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 30px;margin-top:26px;padding:28px 30px;border-radius:14px;background:var(--char);color:#fff}
+.svc-more b{display:block;font-family:var(--display);font-weight:800;font-stretch:80%;font-size:1.5rem;text-transform:uppercase;line-height:1.1}
+.svc-more span{display:block;color:#B8BDC2;margin-top:6px;max-width:560px}
+.svc-more .cta{display:flex;flex-wrap:wrap;gap:12px}
 
 /* ===== Capacitación ===== */
 #capacitacion{background:var(--char);color:#E3E6E9;overflow:hidden}
@@ -239,6 +248,17 @@ header.is-scrolled .brand img{width:42px}
 #tienda .t-tag{background:var(--char)}
 #tienda .t-chip.on{background:var(--char);border-color:var(--char);color:#fff}
 #tienda .t-add{font-weight:700}
+/* Productos va como sección secundaria: más compacta y con el catálogo plegado */
+#tienda{background:#fff;padding:90px 0;border-top:1px solid var(--line)}
+#tienda h2{font-size:clamp(2rem,3.6vw,2.9rem)}
+#tienda .head p{font-size:1.02rem}
+#tienda .t-grid{grid-template-columns:repeat(4,1fr);gap:18px}
+#tienda .t-card-body h3{font-size:1.05rem}
+.shop-collapsed .t-grid > .t-card:nth-child(n+9){display:none}
+.shop-more{display:flex;justify-content:center;margin-top:30px}
+.shop-more[hidden]{display:none}
+/* El botón del pedido solo aparece en el menú cuando hay productos en el carrito */
+.nav-r .t-cartbtn:has(.t-badge:empty),.nav-r .t-cartbtn:has(.t-badge[data-n="0"]){display:none}
 .demo-pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.85rem;font-weight:600;color:var(--teal);background:var(--teal-l);border-radius:6px;padding:6px 12px}
 
 /* ===== Nosotros ===== */
@@ -346,6 +366,7 @@ footer a{display:block;text-decoration:none;line-height:2}
   .dans button:hover{border-color:var(--char)}
   .step button:hover{background:var(--line)}
   .person .acts a:hover{border-color:var(--char);background:var(--paper)}
+  .hero-svc a:hover{background:rgba(255,255,255,.18)}
   footer a:hover{color:#fff}
   .waf:hover{transform:scale(1.06)}
 }
@@ -354,6 +375,8 @@ footer a{display:block;text-decoration:none;line-height:2}
   .links.open{clip-path:inset(0);visibility:visible;transition:clip-path .4s var(--ease-out),visibility 0s}
   .links a{padding:14px 16px;font-family:var(--display);font-size:1.4rem;font-weight:800;font-stretch:80%;text-transform:uppercase}
   .burger{display:block}
+  #tienda .t-grid{grid-template-columns:repeat(3,1fr)}
+  .shop-collapsed .t-grid > .t-card:nth-child(n+7){display:none}
 }
 @media (max-width:980px){
   .cap,.diag,.about,.contact{grid-template-columns:1fr}
@@ -415,6 +438,14 @@ footer a{display:block;text-decoration:none;line-height:2}
   #cform{padding:22px 18px}
   #cform .row2{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr}
+  .hero-svc{gap:6px;margin-top:18px}
+  .hero-svc a{padding:6px 11px;font-size:.8rem}
+  .svc-more{padding:24px 20px}
+  .svc-more .cta,.svc-more .btn{width:100%}
+  #tienda{padding:70px 0}
+  #tienda .t-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .shop-collapsed .t-grid > .t-card:nth-child(n+5){display:none}
+  .shop-more .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   .hero-media img,.hero-media video{animation:none}
@@ -442,8 +473,8 @@ footer a{display:block;text-decoration:none;line-height:2}
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#capacitacion">Capacitación</a></li>
       <li><a href="#diagnostico">Diagnóstico</a></li>
-      <li><a href="#tienda">Tienda</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#tienda">Productos</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-r">
@@ -462,11 +493,12 @@ footer a{display:block;text-decoration:none;line-height:2}
   <div class="wrap hero-in">
     <span class="eyebrow">Safety First · desde 2009</span>
     <h1 data-split="220">Protegemos la vida de tu equipo de trabajo</h1>
-    <p class="hero-p">Asesoría en salud y seguridad ocupacional, capacitación con instructores registrados en el MinTrab, ambulancia y paramédicos en sitio, respuesta a emergencias, extintores y equipo. Todo con un solo proveedor.</p>
+    <p class="hero-p">Asesoría y gestión en salud y seguridad ocupacional, capacitación con instructores registrados en el MinTrab, ambulancia y paramédicos en sitio, respuesta a emergencias y personal SSO dentro de tu operación. Todo con un solo proveedor.</p>
     <div class="cta">
-      <a class="btn btn-red" id="heroWa" target="_blank" rel="noopener">Cotizar por WhatsApp <span class="arr">→</span></a>
-      <a href="#diagnostico" class="btn btn-ghost">Diagnóstico gratis</a>
+      <a class="btn btn-red" id="heroWa" target="_blank" rel="noopener">Cotizar un servicio <span class="arr">→</span></a>
+      <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
     </div>
+    <ul class="hero-svc" id="heroSvc" aria-label="Nuestros servicios"></ul>
     <div class="stats">
       <div class="stat"><b><i>+</i><span id="years" data-count="15">15</span></b><span>años protegiendo empresas</span></div>
       <div class="stat"><b data-count="23">23</b><span>cursos y talleres</span></div>
@@ -487,9 +519,16 @@ footer a{display:block;text-decoration:none;line-height:2}
     <div class="head" data-reveal>
       <span class="eyebrow">Servicios</span>
       <h2>Todo lo que tu empresa necesita <em>en un solo lugar</em></h2>
-      <p>Desde el plan de SSO y la matriz de riesgos hasta la ambulancia en tu evento y los bomberos para un incendio industrial.</p>
+      <p>Desde el plan de SSO y la matriz de riesgos hasta la ambulancia en tu evento y los bomberos para un incendio industrial. Nuestros especialistas trabajan contigo, en tu empresa.</p>
     </div>
     <div class="svc" id="svc" data-reveal-group="120"></div>
+    <div class="svc-more" data-reveal="fade">
+      <div><b>¿No sabes por dónde empezar?</b><span>Haz el diagnóstico gratis o cuéntanos qué necesitas y un especialista te arma la propuesta.</span></div>
+      <div class="cta">
+        <a href="#diagnostico" class="btn btn-white">Diagnóstico gratis</a>
+        <a href="#contacto" class="btn btn-red">Hablar con un asesor <span class="arr">→</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -540,23 +579,6 @@ footer a{display:block;text-decoration:none;line-height:2}
   </div>
 </section>
 
-<!-- TIENDA -->
-<section id="tienda">
-  <div class="wrap">
-    <div class="shop-top">
-      <div class="head" data-reveal>
-        <span class="eyebrow">Tienda</span>
-        <h2>Extintores, botiquines <em>y equipo</em></h2>
-        <p>Compra en línea o pide la recarga de tus extintores. Para pedidos de empresa, te hacemos una cotización.</p>
-        <span class="demo-pill">Precios y pago de demostración</span>
-      </div>
-      <input class="t-search" id="t-search" type="search" placeholder="Buscar: extintor, botiquín, casco…" enterkeyhint="search" autocomplete="off" aria-label="Buscar productos" data-reveal="fade">
-    </div>
-    <div class="t-toolbar"><div class="t-chips" id="t-chips" role="group" aria-label="Categorías"></div></div>
-    <div id="t-grid" aria-live="polite"></div>
-  </div>
-</section>
-
 <!-- NOSOTROS -->
 <section id="nosotros">
   <div class="wrap">
@@ -599,6 +621,24 @@ footer a{display:block;text-decoration:none;line-height:2}
       <a class="btn btn-red" id="bandWa" target="_blank" rel="noopener">Escribir por WhatsApp <span class="arr">→</span></a>
       <a class="btn btn-ghost" id="bandTel"></a>
     </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS (catálogo secundario: se muestran algunos y se despliega el resto) -->
+<section id="tienda" class="shop-collapsed">
+  <div class="wrap">
+    <div class="shop-top">
+      <div class="head" data-reveal>
+        <span class="eyebrow">Productos</span>
+        <h2>Te equipamos</h2>
+        <p>Extintores, recargas, botiquines y equipo de protección para complementar nuestros servicios. Compra en línea o pide una cotización para tu empresa.</p>
+        <span class="demo-pill">Precios y pago de demostración</span>
+      </div>
+      <input class="t-search" id="t-search" type="search" placeholder="Buscar: extintor, botiquín, casco…" enterkeyhint="search" autocomplete="off" aria-label="Buscar productos" data-reveal="fade">
+    </div>
+    <div class="t-toolbar"><div class="t-chips" id="t-chips" role="group" aria-label="Categorías"></div></div>
+    <div id="t-grid" aria-live="polite"></div>
+    <div class="shop-more"><button type="button" class="btn btn-line" id="shopMore" aria-controls="t-grid" aria-expanded="false">Ver todo el catálogo <span id="shopN"></span></button></div>
   </div>
 </section>
 
@@ -647,8 +687,8 @@ footer a{display:block;text-decoration:none;line-height:2}
   <div class="wrap">
     <div class="foot">
       <div><div class="fbrand"><img src="logos/cgsa-marca.png" alt="" width="56" height="51"><b>Corporación<br>Glaesel, S.A.</b></div><p>Todo en uno en salud y seguridad ocupacional. Safety First desde 2009.</p></div>
-      <div><h4>Servicios</h4><a href="#servicios">Asesoría SSO</a><a href="#servicios">Atención prehospitalaria</a><a href="#servicios">Respuesta a emergencias</a><a href="#capacitacion">Capacitación</a></div>
-      <div><h4>Tienda</h4><a href="#tienda" data-goto="extintores">Extintores</a><a href="#tienda" data-goto="recargas">Recargas</a><a href="#tienda" data-goto="botiquines">Botiquines</a><a href="#tienda" data-goto="epp">Equipo de protección</a></div>
+      <div><h4>Servicios</h4><a href="#svc-consultoria">Asesoría y gestión SSO</a><a href="#svc-prehospitalaria">Atención prehospitalaria</a><a href="#svc-emergencias">Respuesta a emergencias</a><a href="#svc-outsourcing">Personal SSO en tu empresa</a><a href="#capacitacion">Capacitación</a><a href="#diagnostico">Diagnóstico gratis</a></div>
+      <div><h4>Productos</h4><a href="#tienda" data-goto="extintores">Extintores</a><a href="#tienda" data-goto="recargas">Recargas</a><a href="#tienda" data-goto="botiquines">Botiquines</a><a href="#tienda" data-goto="epp">Equipo de protección</a></div>
       <div><h4>Contacto</h4><div id="fContact"></div></div>
     </div>
     <p class="copy">© <span data-year></span> Corporación Glaesel, S.A. · Guatemala. Precios y pagos de la tienda de demostración.</p>
@@ -696,8 +736,9 @@ $('#heroWa').href = wa('¡Hola! 👋 Vi su página y quiero cotizar servicios de
 $('#clientTrack').innerHTML = CLIENTES.map(src => '<img src="' + src + '" alt="" loading="lazy">').join('');
 
 /* ===================== Servicios ===================== */
+$('#heroSvc').innerHTML = SERVICIOS.map(s => '<li><a href="#svc-' + esc(s.id) + '">' + esc(s.nombre) + '</a></li>').join('');
 $('#svc').innerHTML = SERVICIOS.map((s, i) =>
-  '<article class="card"><div class="ph"><img src="' + s.foto + '" alt="" loading="lazy"><span class="num">0' + (i + 1) + '</span></div>' +
+  '<article class="card" id="svc-' + esc(s.id) + '"><div class="ph"><img src="' + s.foto + '" alt="" loading="lazy"><span class="num">0' + (i + 1) + '</span></div>' +
   '<div class="bd"><h3>' + esc(s.nombre) + '</h3><p>' + esc(s.txt) + '</p><ul class="ticks">' + s.items.map(t => '<li>' + esc(t) + '</li>').join('') + '</ul>' +
   '<a class="go" href="' + wa('¡Hola! 👋 Quiero cotizar: ' + s.nombre + '.') + '" target="_blank" rel="noopener">Cotizar este servicio <i>→</i></a></div></article>').join('');
 /* Las tarjetas se revelan de abajo hacia arriba cuando el grupo entra (el motor reparte --rd) */
@@ -863,6 +904,14 @@ Tienda.init({
   confetti: ['#E1141A', '#1B1D20', '#1D5C7C', '#FFFFFF', '#8C9298'],
   textos: { agregado: 'En el pedido', agregadoToast: 'agregado a tu pedido', vacio: 'Tu pedido está vacío', vacioSub: 'Agrega extintores, botiquines o equipo y aparecen aquí.', notaPlaceholder: 'NIT para factura, a quién entregar, horario de recepción…' }
 });
+
+/* Productos plegados: se ven unos cuantos; al buscar, filtrar o pulsar "Ver todo" se despliega el catálogo */
+const shop = $('#tienda'), shopMore = $('#shopMore');
+$('#shopN').textContent = '(' + PRODUCTOS.length + ')';
+const abrirCatalogo = () => { shop.classList.remove('shop-collapsed'); shopMore.setAttribute('aria-expanded', 'true'); shopMore.parentElement.hidden = true; };
+shopMore.addEventListener('click', abrirCatalogo);
+$('#t-chips').addEventListener('click', e => { if(e.target.closest('[data-cat]')) abrirCatalogo(); });
+$('#t-search').addEventListener('input', abrirCatalogo);
 </script>
 </body>
 </html>

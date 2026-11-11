@@ -26,15 +26,15 @@ const TIENDA = {
   marca: "Safety First",
   lema: "Todo en uno en salud y seguridad ocupacional",
   desde: 2009,
-  telefono: "5830 2002",
-  whatsapp: "50258302002",            // 502 + número, sin espacios. "" = se oculta (CONFIRMAR que tiene WhatsApp)
+  telefono: "3993 1999",
+  whatsapp: "50239931999",           // 502 + número, sin espacios. "" = se oculta (CONFIRMAR que tiene WhatsApp)
   correo: "alex.glaesel@glaeselsa.com",
   direccion: "Ciudad de Guatemala",   // CONFIRMAR dirección de la oficina
   // Horario de oficina. 0 = domingo, null = cerrado (CONFIRMAR)
   horario: { 0: null, 1: [8, 17], 2: [8, 17], 3: [8, 17], 4: [8, 17], 5: [8, 17], 6: [8, 12] },
   sedes: [],
   contactos: [
-    { nombre: "Alex Glaesel", cargo: "Director Comercial", correo: "alex.glaesel@glaeselsa.com", telefono: "5830 2002" },
+    { nombre: "Alex Glaesel", cargo: "Director Comercial", correo: "alex.glaesel@glaeselsa.com", telefono: "3993 1999" },
     { nombre: "Viviana Castillo", cargo: "Directora Administrativa", correo: "viviana.glaesel@glaeselsa.com", telefono: "4545 4557" }
   ]
 };

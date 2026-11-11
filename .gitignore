@@ -1,0 +1,8 @@
+# Configuración local de Claude (no es parte de la página)
+.claude/
+
+# Material interno de la empresa
+Presentacion General CGSA.pdf
+
+# Copia de respaldo de la versión anterior
+VERSION CATALOGO/
